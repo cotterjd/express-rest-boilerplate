@@ -15,3 +15,5 @@ app.set('port', 3040)
 app.listen(app.get('port'), function () {
   console.log('Node app is running on port', app.get('port'))
 })
+
+module.exports = app // exporting app will be useful for integration tests later
