@@ -8,7 +8,8 @@ const controller = require(`./controllers`)
 app.use(cors()) // enables cors for all origins
 app.use(bodyParser.json()) // to be able to receive json in requests
 
-app.get('/:name', controller.getExample)
+app.get('/', controller.getExample)
+app.get('/:name', controller.paramExample)
 app.post('/', controller.postExample)
 
 app.set('port', process.env.PORT || 3040)

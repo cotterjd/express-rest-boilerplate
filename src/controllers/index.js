@@ -1,7 +1,23 @@
 /**
- * @api {get} /:name 
+ * @api {get} / 
  * @apiName getExample
- * @apiGroup example
+ * @apiGroup Get Example
+ * @apiVersion 1.0.0 
+ * @apiExample {curl} Example usage:
+ * curl http:localhost:3040/ 
+ * @apiSuccess {string} hello message 
+ * @apiSuccessExample {json} Success response:
+ *   HTTPS 200 OK
+ *   "Hello!" 
+ */
+const getExample = (req, res) => {
+  res.send(`Hello!`)
+}
+
+/**
+ * @api {get} /:name 
+ * @apiName paramExample
+ * @apiGroup Param Example
  * @apiVersion 1.0.0 
  * @apiParam {String} name 
  * @apiExample {curl} Example usage:
@@ -15,7 +31,7 @@
  *     "query": { "foo": "bar" } 
  *   }
  */
-const getExample = (req, res) => {
+const paramExample = (req, res) => {
   res.json({ 
     param: req.params.name,
     query: req.query,
@@ -24,10 +40,10 @@ const getExample = (req, res) => {
 /**
  * @api {post} /
  * @apiName postExample
- * @apiGroup example
+ * @apiGroup Post Example
  * @apiVersion 1.0.0 
  * @apiExample {curl} Example usage:
- * curl httphttp://localhost:3040Type: application/json" -d "{\-X POST -H "Content-Type: application/json" -d "{\"name\": \"jon\" }" http://localhost:3040
+ * curl -X POST -H "Content-Type: application/json" -d "{\"name\": \"jon\" }" http://localhost:3040
  * @apiSuccess {String} name Name sent 
  * @apiSuccessExample {json} Success response:
  *  HTTPS 200 OK
@@ -41,5 +57,6 @@ const postExample = (req, res) => {
 
 module.exports = {
   getExample,
+  paramExample,
   postExample,
 }

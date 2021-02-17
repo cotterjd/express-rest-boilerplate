@@ -1,10 +1,52 @@
 [
   {
     "type": "get",
-    "url": "/:name",
+    "url": "/",
     "title": "",
     "name": "getExample",
-    "group": "example",
+    "group": "Get_Example",
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl http:localhost:3040/",
+        "type": "curl"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "hello",
+            "description": "<p>message</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success response:",
+          "content": "HTTPS 200 OK\n\"Hello!\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/controllers/index.js",
+    "groupTitle": "Get_Example",
+    "sampleRequest": [
+      {
+        "url": "/"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/:name",
+    "title": "",
+    "name": "paramExample",
+    "group": "Param_Example",
     "version": "1.0.0",
     "parameter": {
       "fields": {
@@ -54,7 +96,7 @@
       ]
     },
     "filename": "src/controllers/index.js",
-    "groupTitle": "example",
+    "groupTitle": "Param_Example",
     "sampleRequest": [
       {
         "url": "http://localhost:3040/:name"
@@ -66,12 +108,12 @@
     "url": "/",
     "title": "",
     "name": "postExample",
-    "group": "example",
+    "group": "Post_Example",
     "version": "1.0.0",
     "examples": [
       {
         "title": "Example usage:",
-        "content": "curl httphttp://localhost:3040Type: application/json\" -d \"{\\-X POST -H \"Content-Type: application/json\" -d \"{\\\"name\\\": \\\"jon\\\" }\" http://localhost:3040",
+        "content": "curl -X POST -H \"Content-Type: application/json\" -d \"{\\\"name\\\": \\\"jon\\\" }\" http://localhost:3040",
         "type": "curl"
       }
     ],
@@ -96,7 +138,7 @@
       ]
     },
     "filename": "src/controllers/index.js",
-    "groupTitle": "example",
+    "groupTitle": "Post_Example",
     "sampleRequest": [
       {
         "url": "/"
