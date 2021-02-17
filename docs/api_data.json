@@ -2,7 +2,7 @@
   {
     "type": "get",
     "url": "/",
-    "title": "",
+    "title": "returns hello message",
     "name": "getExample",
     "group": "Get_Example",
     "version": "1.0.0",
@@ -44,7 +44,7 @@
   {
     "type": "get",
     "url": "/:name",
-    "title": "",
+    "title": "returns param value and query value that was sent",
     "name": "paramExample",
     "group": "Param_Example",
     "version": "1.0.0",
@@ -106,7 +106,7 @@
   {
     "type": "post",
     "url": "/",
-    "title": "",
+    "title": "return body that was sent",
     "name": "postExample",
     "group": "Post_Example",
     "version": "1.0.0",

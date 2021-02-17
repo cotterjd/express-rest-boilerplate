@@ -1,5 +1,5 @@
 /**
- * @api {get} / 
+ * @api {get} / returns hello message
  * @apiName getExample
  * @apiGroup Get Example
  * @apiVersion 1.0.0 
@@ -15,7 +15,7 @@ const getExample = (req, res) => {
 }
 
 /**
- * @api {get} /:name 
+ * @api {get} /:name returns param value and query value that was sent
  * @apiName paramExample
  * @apiGroup Param Example
  * @apiVersion 1.0.0 
@@ -38,7 +38,7 @@ const paramExample = (req, res) => {
   })
 }
 /**
- * @api {post} /
+ * @api {post} / return body that was sent
  * @apiName postExample
  * @apiGroup Post Example
  * @apiVersion 1.0.0 
@@ -52,7 +52,7 @@ const paramExample = (req, res) => {
  *  }
  */
 const postExample = (req, res) => {
-  res.json({ name: req.body.name })
+  res.json(req.body)
 }
 
 module.exports = {
