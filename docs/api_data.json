@@ -1,15 +1,15 @@
 [
   {
     "type": "get",
-    "url": "/",
-    "title": "returns hello message",
-    "name": "getExample",
-    "group": "Get_Example",
+    "url": "/version",
+    "title": "returns version",
+    "name": "getVersin",
+    "group": "Get_Version",
     "version": "1.0.0",
     "examples": [
       {
         "title": "Example usage:",
-        "content": "curl http:localhost:3040/",
+        "content": "curl http:localhost:3040/version",
         "type": "curl"
       }
     ],
@@ -20,24 +20,24 @@
             "group": "Success 200",
             "type": "string",
             "optional": false,
-            "field": "hello",
-            "description": "<p>message</p>"
+            "field": "version",
+            "description": ""
           }
         ]
       },
       "examples": [
         {
           "title": "Success response:",
-          "content": "HTTPS 200 OK\n\"Hello!\"",
+          "content": "HTTPS 200 OK\n\"1.0.0\"",
           "type": "json"
         }
       ]
     },
     "filename": "src/controllers/index.js",
-    "groupTitle": "Get_Example",
+    "groupTitle": "Get_Version",
     "sampleRequest": [
       {
-        "url": "/"
+        "url": "http://localhost:3040/version"
       }
     ]
   },
@@ -90,7 +90,7 @@
       "examples": [
         {
           "title": "Success response:",
-          "content": "HTTPS 200 OK\n{\n  \"param\": \"jon\",\n  \"query\": { \"foo\": \"bar\" } \n}",
+          "content": "HTTPS 200 OK\n{\n  \"param\": \"jon\",\n  \"query\": { \"foo\": \"bar\" }\n}",
           "type": "json"
         }
       ]

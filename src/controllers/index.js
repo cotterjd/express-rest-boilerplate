@@ -1,38 +1,39 @@
 /**
- * @api {get} / returns hello message
- * @apiName getExample
- * @apiGroup Get Example
- * @apiVersion 1.0.0 
+ * @api {get} /version returns version
+ * @apiName getVersin
+ * @apiGroup Get Version
+ * @apiVersion 1.0.0
  * @apiExample {curl} Example usage:
- * curl http:localhost:3040/ 
- * @apiSuccess {string} hello message 
+ * curl http:localhost:3040/version
+ * @apiSuccess {string} version
  * @apiSuccessExample {json} Success response:
  *   HTTPS 200 OK
- *   "Hello!" 
+ *   "1.0.0"
  */
-const getExample = (req, res) => {
-  res.send(`Hello!`)
+const getVersion = (req, res) => {
+  const version = require(`../../package.json`).version
+  res.send(version)
 }
 
 /**
  * @api {get} /:name returns param value and query value that was sent
  * @apiName paramExample
  * @apiGroup Param Example
- * @apiVersion 1.0.0 
- * @apiParam {String} name 
+ * @apiVersion 1.0.0
+ * @apiParam {String} name
  * @apiExample {curl} Example usage:
- * curl http:localhost:3040/jon?foo=bar 
+ * curl http:localhost:3040/jon?foo=bar
  * @apiSuccess {String} param param sent
- * @apiSuccess {Object} query query object 
+ * @apiSuccess {Object} query query object
  * @apiSuccessExample {json} Success response:
  *   HTTPS 200 OK
  *   {
  *     "param": "jon",
- *     "query": { "foo": "bar" } 
+ *     "query": { "foo": "bar" }
  *   }
  */
 const paramExample = (req, res) => {
-  res.json({ 
+  res.json({
     param: req.params.name,
     query: req.query,
   })
@@ -41,10 +42,10 @@ const paramExample = (req, res) => {
  * @api {post} / return body that was sent
  * @apiName postExample
  * @apiGroup Post Example
- * @apiVersion 1.0.0 
+ * @apiVersion 1.0.0
  * @apiExample {curl} Example usage:
  * curl -X POST -H "Content-Type: application/json" -d "{\"name\": \"jon\" }" http://localhost:3040
- * @apiSuccess {String} name Name sent 
+ * @apiSuccess {String} name Name sent
  * @apiSuccessExample {json} Success response:
  *  HTTPS 200 OK
  *  {
@@ -56,7 +57,7 @@ const postExample = (req, res) => {
 }
 
 module.exports = {
-  getExample,
+  getVersion,
   paramExample,
   postExample,
 }
