@@ -10,8 +10,7 @@ Includes: <br>
 `$ git clone --depth=1 git@github.com:cotterjd/simple-express-boilerplate.git # clone repo, take only last commit from history`<br>
 `$ mv simple-express-boilerplate actual_project_name`<br>
 `$ cd actual_project_name`<br>
-`$ npm install` <br>
-`$ npm start`<br>
+`$ npm install && npm start` <br>
 
 ## Use
 `curl http://localhost:3040/version`</br>
